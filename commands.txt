@@ -1,0 +1,91 @@
+'''
+   -Bölümler-
+
+1- Sýcaklýk Hesaplama +
+2- Kenar uzunluðu ve yükseklikten alan bulma ++
+3- Daire yarýçaptan alan hesaplama ++
+4- Ortalamaya göre Geçti / Kaldý
+
+'''
+# Fonksiyonlar
+def defsicaklik():
+    t= int(input("\nSýcaklýk giriniz : "))
+    if t < 0 :
+        print("Çok soðuk!\n")
+    elif t<20:
+        print("Serin\n")
+    elif t>40 and t<50:
+        print("Biraz fazla sýcak!\n")
+    elif t>50:
+        print("   cehennem daha soðuk, bence doðru bir sayý girmedin.\n")
+
+def defucgn():
+    k = float(input("Alt Kenar Uzunluðu : "))
+    y = float(input("Alt Kenar Yüksekliði : "))
+    alan = k*y/2
+    print("Üçgenin Alaný: ", alan)
+
+def defdrtgen():
+    dk = float(input("\nDörtgenin Bir Kenarý : "))
+    dy = float(input("Dörtgenin Farklý Bir Kenarý : "))
+    dga = dk*dy
+    print("\nDörtgeninizin alaný : ",dga)
+
+def defdarie():
+    r = float(input("\nYarýçapý Giriniz : "))
+    pi = 3.14
+    dalan =pi*(r**2) # pi çarpý r üssü 2
+    print("\nDairenizin alaný : ", dalan)
+
+def defort():
+    while True:
+        ort = float(input("-Ortalamayý giriniz : "))
+        dev = float(input("-Devamsýzlýk (Tam) Gün giriniz : "))
+        if ort<50 and dev<10:
+            print("\nOrtalamadan Kaldý!")
+            break
+        elif ort>50 and dev>10:
+            print("\nDevamsýzlýktan Kaldý!")
+            break
+        elif ort<50 and dev>10:
+            print("\nHer açýdan Kaldý!")
+            break
+        elif ort>=50 and dev<10:
+            print("\nHer açýdan Geçti.")
+            break
+        else:
+            print("\nLütfen geçerli bir durum giriniz!")
+            continue
+
+# Ana Mekan
+while True:
+    print("\nUygulamaya hoþgeldiniz. Ne yapmak istersiniz?")
+    print("\n [1] Sýcaklýk Programý \n [2] Üçgen Alan Bulma \n [3] Dörtgen Alan Bulma \n [4] Daire Alan Bulma \n [5] Kalma / Geçme Hesaplama \n [6] Uygulamayý Sonlandýr \n")
+    cevap = input("---: ")
+    if cevap=="1":
+        print("Program Baþlatýlýyor..\n")
+        defsicaklik()
+        continue
+    elif cevap=="2":
+        print("Program Baþlatýlýyor..\n")
+        defucgn()
+        continue
+
+    elif cevap == "3":
+        print("Program Baþlatýlýyor..\n")
+        defdrtgen()
+        continue
+
+    elif cevap == "4":
+        print("Program Baþlatýlýyor..\n")
+        defdarie()
+        continue
+
+    elif cevap == "5":
+        print("Program Baþlatýlýyor..\n")
+        defort()
+        continue
+
+    elif cevap == "6":
+        print("Peki, programý sonlandýrýyorum..")
+        break
